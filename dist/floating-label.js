@@ -52,7 +52,7 @@
         // html template for the directive
         template = '<div class="floating-label">' +
             '<label ng-class="{ \'active\': showLabel }">' + $attrs.placeholder + '</label>'+
-            '<input ' + templateAttributes.join(' ') + ' />' +
+            '<' + $element.prop('tagName') + ' ' + templateAttributes.join(' ') + ' />' +
         '</div>';
 
         $element.replaceWith(angular.element(template));
@@ -72,7 +72,7 @@
      */
     function floatingLabelPostCompileFunction ($scope, $element)
     {
-        var inputBox = $element.find('input'),
+        var inputBox = $element.find('input') || $element.find('textarea') || $element.find('select'),
             ngModelKey = inputBox.attr('ng-model');
 
         $scope.$watch(ngModelKey, function (newValue) {
