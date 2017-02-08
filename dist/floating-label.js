@@ -72,7 +72,7 @@
      */
     function floatingLabelPostCompileFunction ($scope, $element)
     {
-        var inputBox = $element.find('input') || $element.find('textarea') || $element.find('select'),
+        var inputBox = $element.find($element.children()[1].tagName),
             ngModelKey = inputBox.attr('ng-model');
 
         $scope.$watch(ngModelKey, function (newValue) {

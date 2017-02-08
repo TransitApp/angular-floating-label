@@ -18,6 +18,8 @@
       -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
-.floating-label input {
+.floating-label input,
+.floating-label textarea,
+.floating-label select {
   position: relative;
 }
